@@ -66,8 +66,8 @@ function Game({ score, setScore, setHighScore, setGameOver }) {
       setBallPosition((prev) => {
         if (prev.y >= 90) {
           if (Math.abs(prev.x - bowlX) < 14) {
-            setScore((s) => s + 10);  // Production
-        //  setScore((s) => s + 5);      Development 
+            setScore((s) => s + 10); // Production
+            //  setScore((s) => s + 5);      Development
             setSpeed((s) => Math.min(s + 0.05, 1));
             setCatchEffect(true);
             setTimeout(() => setCatchEffect(false), 300);
@@ -116,17 +116,17 @@ function Game({ score, setScore, setHighScore, setGameOver }) {
           transform: "translate(-50%, -50%)",
         }}
       />
-      <div
+      {/* <div
         className="absolute bottom-2 w-32 h-6 bg-[#f2f4cb] rounded-lg transition-transform duration-100"
         style={{ left: `${bowlX}%`, transform: "translateX(-50%)" }}
-      ></div>
-      {/* <img
+      ></div> */}
+      <img
         id="car"
-        src="/car2.jpeg"
+        src="/Car-Driver.png"
         alt="Car"
         className="absolute bottom-2 w-32 rounded-lg transition-transform duration-100"
         style={{ left: `${bowlX}%`, transform: "translateX(-50%)" }}
-      /> */}
+      />
       {catchEffect && (
         <div
           className="absolute size-14 bg-green-400 rounded-full animate-ping"
